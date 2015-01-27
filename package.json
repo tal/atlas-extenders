@@ -1,0 +1,31 @@
+{
+  "name": "atlas-extenders",
+  "version": "1.0.0",
+  "description": "Extenders that allow for the creation of advanced objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tal/atlas-extenders"
+  },
+  "author": "Tal Atlas <me@tal.by> (http://tal.by/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tal/atlas-extenders/issues"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.0",
+    "browserify": "^8.1.1",
+    "jasmine": "^2.1.1"
+  },
+  "homepage": "https://github.com/tal/atlas-extenders",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "backbone-events-standalone": "^0.2.4"
+  }
+}
