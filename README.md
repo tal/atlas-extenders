@@ -279,6 +279,8 @@ which is constructing it without causing a syncronous circular dependencies.
 
 ## Todo
 
+- [ ] figure out how to trigger bulk set events
+
 ## Contributing
 
 1. Fork it

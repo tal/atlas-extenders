@@ -115,6 +115,8 @@ describe('attributes', function() {
         parent: 'omgset',
       });
 
+      expect(instance.parent).toBe('omgset');
+
       instance.on('set:parent', callback);
       instance.on('update:parent', callback2);
 
@@ -155,6 +157,79 @@ describe('attributes', function() {
 
     });
 
+  });
+
+
+  describe('setAll', function() {
+    /*eslint no-undefined:0 */
+
+    it('should work', function() {
+      instance = new AttributedSubClass();
+
+      instance.setAll({
+        override: 'setAll',
+        nothing: 'nothing'
+      });
+
+      expect(instance.override).toBe('setAll');
+      expect(instance.nothing).toBeUndefined();
+    });
+
+    it('should trigger proper event', function() {
+      var callback = jasmine.createSpy('callback');
+      var callback2 = jasmine.createSpy('callback2');
+
+      instance = new AttributedSubClass();
+
+      instance.on('set', callback);
+      instance.on('update', callback2);
+
+      instance.setAll({
+        child: 'yo'
+      });
+
+      expect(callback).toHaveBeenCalledWith(instance, [{
+        key: 'child',
+        firstSet: true,
+        previous: 321,
+        options: undefined,
+        new: 'yo'
+      }]);
+
+      expect(callback2).not.toHaveBeenCalled();
+    });
+
+    it('should trigger proper event', function() {
+      var callback = jasmine.createSpy('callback');
+      var callback2 = jasmine.createSpy('callback2');
+
+      instance = new AttributedSubClass();
+
+      instance.child = 'omg';
+
+      instance.on('set', callback);
+      instance.on('update', callback2);
+
+      instance.setAll({
+        child: 'yo'
+      });
+
+      expect(callback).toHaveBeenCalledWith(instance, [{
+        key: 'child',
+        firstSet: false,
+        previous: 'omg',
+        options: undefined,
+        new: 'yo'
+      }]);
+
+      expect(callback2).toHaveBeenCalledWith(instance, [{
+        key: 'child',
+        firstSet: false,
+        previous: 'omg',
+        options: undefined,
+        new: 'yo'
+      }]);
+    });
   });
 
 });
