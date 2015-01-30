@@ -7,7 +7,7 @@
     "test": "jasmine"
   },
   "directories": {
-    "lib": "lib"
+    "lib": "extenders"
   },
   "repository": {
     "type": "git",

@@ -84,25 +84,25 @@ var Model = Class.extend({ ...
 
 The module includes many extenders to get you going.
 
-### [events](https://github.com/tal/atlas-extenders/blob/master/lib/events.js)
+### [events](https://github.com/tal/atlas-extenders/blob/master/extenders/events.js)
 
 When extended instances of the class will work with `Backbone.Events`
 
-### [initialize](https://github.com/tal/atlas-extenders/blob/master/lib/initialize.js)
+### [initialize](https://github.com/tal/atlas-extenders/blob/master/extenders/initialize.js)
 
 Will call the method initialize on the prototype durring in the constructor.
 
-### [assign-properties](https://github.com/tal/atlas-extenders/blob/master/lib/assign-properties.js)
+### [assign-properties](https://github.com/tal/atlas-extenders/blob/master/extenders/assign-properties.js)
 
-This is a helper extender, it's a dependency for extenders which want to apply prototype values when they're used. See [initialize](https://github.com/tal/atlas-extenders/blob/master/lib/initialize.js) for a basic example of how it works.
+This is a helper extender, it's a dependency for extenders which want to apply prototype values when they're used. See [initialize](https://github.com/tal/atlas-extenders/blob/master/extenders/initialize.js) for a basic example of how it works.
 
-### [concat-array](https://github.com/tal/atlas-extenders/blob/master/lib/concat-array.js)
+### [concat-array](https://github.com/tal/atlas-extenders/blob/master/extenders/concat-array.js)
 
 This one works a little differently as its a builder for extenders. It allows you to define
 an array property that will get added to whenever you extend the class.
 
 ```js
-var concatArrayBuilder = require('atlas-extenders/concat-array');
+var concatArrayBuilder = require('atlas-extenders/extenders/concat-array');
 var concatArray = concatArrayBuilder('arr');
 
 var Base = concatArray.call(Class, {
@@ -120,12 +120,12 @@ base.arr; //=> [1,2]
 sub.arr; //=> [1,2,'four','five']
 ```
 
-### [merge-object](https://github.com/tal/atlas-extenders/blob/master/lib/merge-object.js)
+### [merge-object](https://github.com/tal/atlas-extenders/blob/master/extenders/merge-object.js)
 
 Just like `concat-array` but for merging objects:
 
 ```js
-var concatArrayBuilder = require('atlas-extenders/concat-array');
+var concatArrayBuilder = require('atlas-extenders/extenders/concat-array');
 var concatArray = concatArrayBuilder('obj');
 
 var Base = concatArray.call(Class, {
@@ -149,7 +149,7 @@ base.obj; //=> {foo: 'bar', omg: 'base'}
 sub.obj; //=> {foo: 'bar', omg: 'sub', bar: 'baz'}
 ```
 
-### [lazy-getter](https://github.com/tal/atlas-extenders/blob/master/lib/lazy-getter.js)
+### [lazy-getter](https://github.com/tal/atlas-extenders/blob/master/extenders/lazy-getter.js)
 
 Defines properties that are called lazily.
 
@@ -183,7 +183,7 @@ instance.two //=> 2
 instance.incrementOne //=> 3
 ```
 
-### [attributes](https://github.com/tal/atlas-extenders/blob/master/lib/attributes.js)
+### [attributes](https://github.com/tal/atlas-extenders/blob/master/extenders/attributes.js)
 
 Attributes allow you to have values that act like a model. With default values and trigger
 events when set/updated. Two different events can be fired: `set:<attr-name>` any time you
@@ -217,7 +217,7 @@ var postId = post.get('id');
 var postBody = post.body;
 ```
 
-### [delegate-attributes](https://github.com/tal/atlas-extenders/blob/master/lib/delegate-attributes.js)
+### [delegate-attributes](https://github.com/tal/atlas-extenders/blob/master/extenders/delegate-attributes.js)
 
 Delegate attributes lets you have a local model with its own values but also delegate getters
 or perhaps setters to another model. This is useful when you have one core data structure that
@@ -249,7 +249,7 @@ instance.coreStr; //=> 'test'
 instance.coreStr = 'change'; // no change.
 ```
 
-### [polymorphic-constructor](https://github.com/tal/atlas-extenders/blob/master/lib/polymorphic-constructor.js)
+### [polymorphic-constructor](https://github.com/tal/atlas-extenders/blob/master/extenders/polymorphic-constructor.js)
 
 Polymorphic constructor allows you to specify a class that when instantiated will actually
 yield different classes depending on an attribute. By default this is the value of `type` but

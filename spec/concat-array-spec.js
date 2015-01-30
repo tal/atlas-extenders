@@ -1,5 +1,5 @@
 var BaseClass   = require('./support/base-class');
-var concatArray = require('../lib/concat-array');
+var concatArray = require('../extenders/concat-array');
 
 describe('concatArray', function() {
   var Parent;

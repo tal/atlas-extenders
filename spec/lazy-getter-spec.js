@@ -1,5 +1,5 @@
 var BaseClass  = require('./support/base-class');
-var lazyGetter = require('../lib/lazy-getter');
+var lazyGetter = require('../extenders/lazy-getter');
 
 describe('assignPropertiesExtender', function() {
   var instance;

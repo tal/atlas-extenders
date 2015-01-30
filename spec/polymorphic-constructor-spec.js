@@ -1,5 +1,5 @@
 var BaseClass              = require('./support/base-class');
-var polymorphicConstructor = require('../lib/polymorphic-constructor');
+var polymorphicConstructor = require('../extenders/polymorphic-constructor');
 
 describe('polymorphicConstructor', function() {
   var instance;

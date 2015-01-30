@@ -1,5 +1,5 @@
 var baseClass                = require('./support/base-class');
-var assignPropertiesExtender = require('../lib/assign-properties');
+var assignPropertiesExtender = require('../extenders/assign-properties');
 
 describe('assignPropertiesExtender', function() {
   var instance;

@@ -1,6 +1,6 @@
 var BaseClass = require('./support/base-class');
-var delegateExtend = require('../lib/delegate-attributes');
-var attributesExtend = require('../lib/attributes');
+var delegateExtend = require('../extenders/delegate-attributes');
+var attributesExtend = require('../extenders/attributes');
 
 describe('delegateExtend', function() {
   var CoreModel;

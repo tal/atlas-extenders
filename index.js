@@ -1,6 +1,6 @@
 var _ = require('lodash');
 
-var assignProperties = require('./lib/utils/assign-properties');
+var assignProperties = require('./extenders/utils/assign-properties');
 
 function identity(foo) {
   return foo;

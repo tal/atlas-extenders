@@ -1,5 +1,5 @@
 var BaseClass   = require('./support/base-class');
-var mergeObject = require('../lib/merge-object');
+var mergeObject = require('../extenders/merge-object');
 
 describe('mergeObject', function() {
   var Parent;

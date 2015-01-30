@@ -1,4 +1,4 @@
-var assignProperties = require('../../lib/utils/assign-properties');
+var assignProperties = require('../../extenders/utils/assign-properties');
 
 describe('assignProperties', function() {
   it('should assign basically', function() {

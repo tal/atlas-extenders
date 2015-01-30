@@ -1,5 +1,5 @@
 var BaseClass  = require('./support/base-class');
-var attributes = require('../lib/attributes');
+var attributes = require('../extenders/attributes');
 
 describe('attributes', function() {
   var instance;
