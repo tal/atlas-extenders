@@ -1,4 +1,5 @@
 # Extandable Extenders
+[![Build Status](https://travis-ci.org/tal/atlas-extenders.svg?branch=master)](https://travis-ci.org/tal/atlas-extenders)
 
 Extendable etenders are a way of making advance javascript objects with inheritance.
 
