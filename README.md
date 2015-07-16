@@ -126,10 +126,10 @@ sub.arr; //=> [1,2,'four','five']
 Just like `concat-array` but for merging objects:
 
 ```js
-var concatArrayBuilder = require('atlas-extenders/extenders/concat-array');
-var concatArray = concatArrayBuilder('obj');
+var mergeObjectBuilder = require('atlas-extenders/extenders/merge-object');
+var mergeObject = mergeObjectBuilder('obj');
 
-var Base = concatArray.buildClass({
+var Base = mergeObject.buildClass({
   obj: {
     'foo': 'bar',
     'omg': 'base'
@@ -225,14 +225,14 @@ or perhaps setters to another model. This is useful when you have one core data 
 many parts of your app share but is used multiple times and in different ways.
 
 ```js
-var CoreModel = attributesExtend.call(BaseClass, {
+var CoreModel = attributesExtend.buildClass({
   attributes: {
     coreStr: 'core_str',
     coreInt: 123
   }
 });
 
-var WrapperModel = attributesExtend.extend(delegateExtend).call(BaseClass, {
+var WrapperModel = attributesExtend.extend(delegateExtend).buildClass({
   delegate: function() {
     return coreInstance || new CoreModel();
   },
