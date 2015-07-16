@@ -6,6 +6,8 @@ function identity(foo) {
   return foo;
 }
 
+function BaseClass() {}
+
 function extender(opts) {
     opts || (opts = {});
     var extend;
@@ -87,6 +89,10 @@ function extender(opts) {
         }
 
         return newExtender;
+    };
+
+    extend.buildClass = function buildCLass(opts) {
+      return this.call(BaseClass, opts);
     };
 
     extend._mixedInExtenders = [];

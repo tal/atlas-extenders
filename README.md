@@ -53,7 +53,7 @@ To apply extenders for the first time you can do:
 ```js
 function Class() {}
 
-var Model = modelExtender.call(Class, {
+var Model = modelExtender.buildClass({
   updated: function() {
     console.log('model was updated');
   }
@@ -106,7 +106,7 @@ an array property that will get added to whenever you extend the class.
 var concatArrayBuilder = require('atlas-extenders/extenders/concat-array');
 var concatArray = concatArrayBuilder('arr');
 
-var Base = concatArray.call(Class, {
+var Base = concatArray.buildClass({
   arr: [1,2]
 });
 
@@ -129,7 +129,7 @@ Just like `concat-array` but for merging objects:
 var concatArrayBuilder = require('atlas-extenders/extenders/concat-array');
 var concatArray = concatArrayBuilder('obj');
 
-var Base = concatArray.call(Class, {
+var Base = concatArray.buildClass({
   obj: {
     'foo': 'bar',
     'omg': 'base'
@@ -155,7 +155,7 @@ sub.obj; //=> {foo: 'bar', omg: 'sub', bar: 'baz'}
 Defines properties that are called lazily.
 
 ```js
-var LazyClass = laxyExtender.call(Class, {
+var LazyClass = laxyExtender.buildClass({
   lazy: {
     get incrementOne() {
       this._count || (this._count = 0);
@@ -194,7 +194,7 @@ the default.
 To use:
 
 ```js
-var Post = attributesExtender.call(Class, {
+var Post = attributesExtender.buildClass({
   attributes: {
     id: null,
     type: 'text',
