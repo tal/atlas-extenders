@@ -4,7 +4,7 @@
 Extendable etenders are a way of making advance javascript objects with inheritance.
 
 They work by creating new functions that extend classes. Think of `Backbone.Model.extend` but
-with the ability to customize what happens.
+with the ability to customize what happens and support for ES6 syntax.
 
 It does this by chaining "extenders" so that you can mix and match what logic you want.
 
@@ -195,7 +195,7 @@ To use:
 
 ```js
 var Post = attributesExtender.call(Class, {
-  defaults: {
+  attributes: {
     id: null,
     type: 'text',
     body: null
@@ -203,7 +203,7 @@ var Post = attributesExtender.call(Class, {
 });
 
 var PhotoPost = Post.extend({
-  defaults: {
+  attributes: {
     type: 'photo',
     photoURL: null
   }
