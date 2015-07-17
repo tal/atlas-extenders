@@ -51,8 +51,6 @@ This will create an extender which will apply the logic for the three extenders;
 To apply extenders for the first time you can do:
 
 ```js
-function Class() {}
-
 var Model = modelExtender.buildClass({
   updated: function() {
     console.log('model was updated');
